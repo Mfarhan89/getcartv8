@@ -1,5 +1,14 @@
 [build]
-  publish = "_site"
-  command = "npm run build"
+  command = "hugo"
+  publish = "public"
 
- 
+[build.environment]
+  HUGO_VERSION = "0.121.1" # You can update this to match your preferred version
+
+[context.production.environment]
+  HUGO_ENV = "production"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
